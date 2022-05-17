@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   color: ${colors.primary};
   text-decoration: none;
   font-size: 2.4rem;
   padding-left: 5.7rem;
+  &.active {
+    text-decoration: underline;
+  }
 `
 const StyledNav = styled.nav`
   display: flex;

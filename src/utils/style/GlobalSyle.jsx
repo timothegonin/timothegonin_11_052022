@@ -13,10 +13,18 @@ const StyledGlobalStyle = createGlobalStyle`
   }
   html{
     font-size:62.5%;
-    max-width: 144rem;
   }
   body{
-    padding:0 10rem;
+    display: flex;
+    justify-content: center;
+    #root{
+      padding:0 10rem;
+      width: 100%;
+      max-width: 144rem;
+      @media screen and (max-width:768px) {
+        padding:0 2rem;
+      }
+    }
   }
 
 `

@@ -1,10 +1,17 @@
+import React from 'react'
 import Header from '../../components/Header'
+import Banner from '../../components/Banner'
+import Gallery from '../../components/Gallery'
+import Footer from '../../components/Footer'
+
 const Home = () => {
   return (
-    <main>
+    <React.Fragment>
       <Header />
-      <h1>Kasa</h1>
-    </main>
+      <Banner />
+      <Gallery />
+      <Footer />
+    </React.Fragment>
   )
 }
 

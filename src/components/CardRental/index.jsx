@@ -11,15 +11,18 @@ const StyledCardRental = styled.article`
   background-repeat: no-repeat;
   background-size: cover;
   height: 34rem;
-  min-width: 34rem;
-  width: 100%;
+  width: 34rem;
   border-radius: 1rem;
   justify-self: center;
   display: flex;
   align-items: flex-end;
+  @media screen and (max-width: 770px) {
+    height: 25.5rem;
+    width: 33.5rem;
+  }
 `
 const StyledCardRentalTitle = styled.h3`
-  max-width: 50%;
+  display: inline-flex;
   margin: 2rem;
   color: white;
   font-weight: 500;

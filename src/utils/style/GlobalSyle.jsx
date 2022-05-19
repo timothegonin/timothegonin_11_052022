@@ -5,8 +5,8 @@ const StyledGlobalStyle = createGlobalStyle`
   font-family: 'Montserrat', sans-serif;
   }
   *,
-  ::before,
-  ::after {
+  &::before,
+  &::after {
       box-sizing: border-box;
       padding: 0;
       margin: 0;
@@ -21,7 +21,7 @@ const StyledGlobalStyle = createGlobalStyle`
       padding:0 10rem;
       width: 100%;
       max-width: 144rem;
-      @media screen and (max-width:768px) {
+      @media screen and (max-width:1024px) {
         padding:0 2rem;
       }
     }

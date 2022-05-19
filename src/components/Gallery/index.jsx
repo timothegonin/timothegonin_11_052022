@@ -13,6 +13,15 @@ const StyledGallery = styled.main`
   justify-content: space-evenly;
   row-gap: 5.6rem;
   column-gap: 5rem;
+  @media screen and (max-width: 869px) {
+    justify-content: space-evenly;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    margin-top: 2.2rem;
+    row-gap: 2rem;
+    background: none;
+  }
 `
 
 const Gallery = () => {

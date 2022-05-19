@@ -3,7 +3,7 @@ import colors from '../../utils/style/colors'
 import CardRental from '../CardRental'
 const StyledGallery = styled.main`
   background-color: ${colors.lightGray};
-  width: 100%;
+  max-width: 124rem;
   height: auto;
   border-radius: 2.5rem;
   margin-top: 4.3rem;
@@ -13,7 +13,10 @@ const StyledGallery = styled.main`
   justify-content: space-evenly;
   row-gap: 5.6rem;
   column-gap: 5rem;
-  @media screen and (max-width: 869px) {
+  @media screen and (max-width: 1436px) {
+    padding: 5.6rem 2.5rem;
+  }
+  @media screen and (max-width: 886px) {
     justify-content: space-evenly;
     width: auto;
     padding: 0;

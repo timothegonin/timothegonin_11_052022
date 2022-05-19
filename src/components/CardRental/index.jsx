@@ -16,7 +16,7 @@ const StyledCardRental = styled.article`
   justify-self: center;
   display: flex;
   align-items: flex-end;
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 786px) {
     height: 25.5rem;
     width: 33.5rem;
   }

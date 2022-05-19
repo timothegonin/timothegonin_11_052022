@@ -10,7 +10,7 @@ const StyledGallery = styled.main`
   padding: 5.6rem 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, 34rem);
-  justify-content: center;
+  justify-content: space-evenly;
   row-gap: 5.6rem;
   column-gap: 5rem;
 `

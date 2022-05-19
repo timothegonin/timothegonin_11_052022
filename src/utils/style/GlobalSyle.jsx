@@ -13,6 +13,7 @@ const StyledGlobalStyle = createGlobalStyle`
   }
   html{
     font-size:62.5%;
+    position: relative;
   }
   body{
     display: flex;

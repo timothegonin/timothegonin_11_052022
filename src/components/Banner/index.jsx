@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Background from '../../assets/home-banner.jpg'
 
 const StyledBanner = styled.section`
-  max-width: 1240px;
+  max-width: 124rem;
   width: 100%;
   height: 223px;
   border-radius: 2.5rem;

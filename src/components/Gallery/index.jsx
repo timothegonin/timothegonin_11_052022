@@ -3,7 +3,7 @@ import colors from '../../utils/style/colors'
 import CardRental from '../CardRental'
 const StyledGallery = styled.main`
   background-color: ${colors.lightGray};
-  max-width: 124rem;
+  width: 100%;
   height: auto;
   border-radius: 2.5rem;
   margin-top: 4.3rem;

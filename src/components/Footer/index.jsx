@@ -8,9 +8,6 @@ const StyledFooterWrapper = styled.footer`
   color: white;
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 0;
-  bottom: calc(-20.9rem + -4.3rem);
   width: 100%;
 `
 const StyledFooterContent = styled.div`

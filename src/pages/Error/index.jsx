@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 const ErrorWrapper = styled.div`
   text-align: center;
+  padding: 0 2rem;
 `
 
 const StyledErrorImg = styled.img`

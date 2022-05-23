@@ -9,6 +9,7 @@ const StyledFooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   width: 100%;
+  /* flex-grow: 0; */
 `
 const StyledFooterContent = styled.div`
   display: flex;

@@ -14,6 +14,10 @@ const AccordionWrapper = styled.div`
     font-weight: 400;
     font-size: 24px;
     color: ${colors.primary};
+    @media screen and (max-width: 576px) {
+      font-size: 12px;
+      padding-bottom: 5rem;
+    }
   }
 `
 
@@ -32,6 +36,16 @@ const AccordionButton = styled.button`
   color: white;
   font-weight: 500;
   font-size: 24px;
+  @media screen and (max-width: 576px) {
+    height: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    font-size: 13px;
+    img {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+  }
 `
 
 const Accordion = () => {

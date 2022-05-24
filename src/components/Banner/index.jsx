@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import Background from '../../assets/home-banner.jpg'
+import HomeBackground from '../../assets/home-banner.jpg'
+import AboutBackground from '../../assets/about-banner.jpg'
 
 const BannerWrapper = styled.aside`
   max-width: 124rem;
@@ -18,12 +19,12 @@ const BannerBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(${Background});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   &.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(${HomeBackground});
     &:after {
       content: 'Chez vous, partout et ailleurs';
       color: white;
@@ -38,6 +39,13 @@ const BannerBackground = styled.div`
         font-size: 24px;
         line-height: 100%;
         margin: 0 1.6rem;
+      }
+    }
+    &--tall-no-text {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(${AboutBackground});
+      @media screen and (max-width: 992px) {
+        border-radius: 1rem;
       }
     }
   }

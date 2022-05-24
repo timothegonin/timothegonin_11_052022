@@ -7,6 +7,14 @@ const AccordionWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: ${colors.lightGray};
+  border-radius: 0.5rem;
+  p {
+    padding: 1.9rem 1.8rem;
+    font-weight: 400;
+    font-size: 24px;
+    color: ${colors.primary};
+  }
 `
 
 const AccordionButton = styled.button`
@@ -25,6 +33,7 @@ const AccordionButton = styled.button`
   font-weight: 500;
   font-size: 24px;
 `
+
 const Accordion = () => {
   return (
     <AccordionWrapper>
@@ -32,13 +41,11 @@ const Accordion = () => {
         Fiabilité
         <img src={AccordionIcon} alt="Accordion toggler" />
       </AccordionButton>
-      <div>
-        <p>
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminatoire ou de perturbation du voisinage
-          entraînera une exclusion de notre plateforme.
-        </p>
-      </div>
+      <p>
+        La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+        comportement discriminatoire ou de perturbation du voisinage entraînera
+        une exclusion de notre plateforme.
+      </p>
     </AccordionWrapper>
   )
 }

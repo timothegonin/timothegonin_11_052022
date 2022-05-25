@@ -1,14 +1,10 @@
 import React from 'react'
+import Carrousel from '../../components/Carrousel'
 
 const Rental = () => {
   return (
     <React.Fragment>
-      <aside>
-        <img src="" alt="" />
-        <button></button>
-        <button></button>
-        <p></p>
-      </aside>
+      <Carrousel />
       <section>
         <div>
           <h1>Cozy loft on the Canal Saint-Martin</h1>

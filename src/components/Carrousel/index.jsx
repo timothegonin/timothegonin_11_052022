@@ -3,6 +3,7 @@ import arrow from '../../assets/arrow_back.svg'
 import bgTest from '../../assets/bg-card-test.jpg'
 
 const CarrouselWrapper = styled.aside`
+  border-radius: 2.5rem;
   margin: 2rem auto;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -10,10 +11,15 @@ const CarrouselWrapper = styled.aside`
   position: relative;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    height: 25.5rem;
+  }
 `
 const CarrouselImage = styled.img`
   object-fit: cover;
   width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 `
 const CarrouselButton = styled.button`
   cursor: pointer;
@@ -28,12 +34,24 @@ const CarrouselButton = styled.button`
   background-size: contain;
 
   &.button--previous {
-    left: 3rem;
+    left: 2rem;
     transform: rotate(90deg);
   }
   &.button--next {
-    right: 3rem;
+    right: 2rem;
     transform: rotate(270deg);
+  }
+  @media screen and (max-width: 768px) {
+    width: 6rem;
+    height: 6rem;
+  }
+  @media screen and (max-width: 576px) {
+    width: 4rem;
+    height: 4rem;
+  }
+  @media screen and (max-width: 426px) {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 `
 const CarrouselIndex = styled.p`
@@ -44,7 +62,10 @@ const CarrouselIndex = styled.p`
   display: block;
   position: absolute;
   font-weight: 500;
-  font-size: 18px; ;
+  font-size: 18px;
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 `
 const Carrousel = () => {
   return (

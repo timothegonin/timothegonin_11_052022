@@ -1,21 +1,25 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import CardRental from '../CardRental'
-const StyledGallery = styled.main`
-  background-color: ${colors.lightGray};
-  max-width: 124rem;
-  height: auto;
-  border-radius: 2.5rem;
+
+const GalleryWrapper = styled.main`
   margin-top: 4.3rem;
-  padding: 5.6rem 5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+`
+const StyledGallery = styled.div`
+  background-color: ${colors.lightGray};
+  /* height: auto; */
+  border-radius: 2.5rem;
+
+  padding: 5.6rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, 34rem);
   justify-content: space-evenly;
   row-gap: 5.6rem;
-  column-gap: 5rem;
-  @media screen and (max-width: 1436px) {
-    padding: 5.6rem 2.5rem;
-  }
+  column-gap: 1rem;
+
   @media screen and (max-width: 886px) {
     justify-content: space-evenly;
     width: auto;
@@ -29,14 +33,16 @@ const StyledGallery = styled.main`
 
 const Gallery = () => {
   return (
-    <StyledGallery>
-      <CardRental />
-      <CardRental />
-      <CardRental />
-      <CardRental />
-      <CardRental />
-      <CardRental />
-    </StyledGallery>
+    <GalleryWrapper>
+      <StyledGallery>
+        <CardRental />
+        <CardRental />
+        <CardRental />
+        <CardRental />
+        <CardRental />
+        <CardRental />
+      </StyledGallery>
+    </GalleryWrapper>
   )
 }
 export default Gallery

@@ -13,17 +13,26 @@ const StyledGlobalStyle = createGlobalStyle`
   }
   html{
     font-size:62.5%;
-    position: relative;
   }
   body{
     display: flex;
     justify-content: center;
+
     #root{
-      padding:0 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
-      max-width: 144rem;
-      @media screen and (max-width:1024px) {
-        padding:0 2rem;
+      min-height:100vh;
+      main{
+        flex-grow: 1;
+      }
+      & > * {
+        max-width: 124rem;
+        width: 100%;
+      }
+      footer {
+        max-width: inherit;
       }
     }
   }

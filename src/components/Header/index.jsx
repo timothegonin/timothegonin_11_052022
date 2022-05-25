@@ -15,7 +15,9 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-top: 4rem;
-  max-width: 124rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
   @media screen and (max-width: 576px) {
     margin-top: 2rem;
   }

@@ -1,28 +1,42 @@
 import styled from 'styled-components'
 import bgTest from '../../assets/bg-card-test.jpg'
-const StyledCardRental = styled.article`
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url(${bgTest});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 34rem;
-  width: 34rem;
+
+const CardRentalWrapper = styled.article`
   border-radius: 1rem;
+  overflow: hidden;
+  height: 34rem;
+  width: 100%;
   justify-self: center;
-  display: flex;
+  display: inline-flex;
   align-items: flex-end;
+  position: relative;
   @media screen and (max-width: 786px) {
     height: 25.5rem;
     width: 33.5rem;
   }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
 `
-const StyledCardRentalTitle = styled.h3`
-  display: inline-flex;
+const CardRentalImage = styled.img`
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`
+const CardRentalTitle = styled.h3`
+  position: absolute;
+  z-index: 1;
   margin: 2rem;
   color: white;
   font-weight: 500;
@@ -30,9 +44,10 @@ const StyledCardRentalTitle = styled.h3`
 `
 const CardRental = () => {
   return (
-    <StyledCardRental>
-      <StyledCardRentalTitle>Card-Rental</StyledCardRentalTitle>
-    </StyledCardRental>
+    <CardRentalWrapper>
+      <CardRentalImage src={bgTest} />
+      <CardRentalTitle>Card-Rental</CardRentalTitle>
+    </CardRentalWrapper>
   )
 }
 export default CardRental

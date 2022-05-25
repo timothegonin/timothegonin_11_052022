@@ -7,7 +7,7 @@ const AccordionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 2rem;
+  margin: 1rem 2rem;
 `
 const AccordionsContent = [
   {

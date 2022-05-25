@@ -18,7 +18,10 @@ const AccordionContainer = styled.div`
     font-weight: 400;
     font-size: 24px;
     color: ${colors.primary};
-    @media screen and (max-width: 576px) {
+  }
+  @media screen and (max-width: 576px) {
+    margin: 1rem 0;
+    p {
       font-size: 12px;
       padding-bottom: 5rem;
     }

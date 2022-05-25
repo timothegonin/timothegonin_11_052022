@@ -57,7 +57,6 @@ const Banner = () => {
   location === '/'
     ? (bannerType = 'banner')
     : (bannerType = 'banner--tall-no-text')
-  console.log(location)
   return (
     <BannerWrapper>
       <BannerBackground className={bannerType} />

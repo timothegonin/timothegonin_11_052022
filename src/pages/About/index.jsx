@@ -37,10 +37,13 @@ const About = () => {
     <React.Fragment>
       <Banner />
       <AccordionsWrapper>
-        <Accordion
-          title={AccordionsContent[0].title}
-          content={AccordionsContent[0].content}
-        />
+        {AccordionsContent.map((AccordionContent, index) => (
+          <Accordion
+            key={`${AccordionContent}-${index}`}
+            title={AccordionContent.title}
+            content={AccordionContent.content}
+          />
+        ))}
       </AccordionsWrapper>
     </React.Fragment>
   )

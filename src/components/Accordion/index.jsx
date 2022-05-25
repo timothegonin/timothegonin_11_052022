@@ -60,26 +60,20 @@ const AccordionButton = styled.button`
   }
 `
 
-const Accordion = () => {
+const Accordion = ({ title, content }) => {
   const [diplayed, handleAccordion] = useState(false)
 
   return (
     <AccordionContainer>
       <AccordionButton onClick={() => handleAccordion(diplayed ? false : true)}>
-        Fiabilité
+        {title}
         <img
           src={AccordionIcon}
           alt="Accordion toggler"
           className={diplayed ? 'open' : 'close'}
         />
       </AccordionButton>
-      {diplayed && (
-        <p>
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminatoire ou de perturbation du voisinage
-          entraînera une exclusion de notre plateforme.
-        </p>
-      )}
+      {diplayed && <p>{content}</p>}
     </AccordionContainer>
   )
 }

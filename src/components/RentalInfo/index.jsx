@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import RentalTags from '../RentalTags'
-const RentalInfoWrapper = styled.div`
+const RentalInfoContainer = styled.div`
   margin: 2rem;
   h1,
   h2 {
@@ -15,6 +15,10 @@ const RentalInfoWrapper = styled.div`
     font-weight: 500;
     font-size: 18px;
   }
+  @media screen and (max-width: 992px) {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
   @media screen and (max-width: 768px) {
     h1 {
       font-size: 18px;
@@ -26,11 +30,11 @@ const RentalInfoWrapper = styled.div`
 `
 const RentalInfo = () => {
   return (
-    <RentalInfoWrapper>
+    <RentalInfoContainer>
       <h1>Cozy loft on the Canal Saint-Martin</h1>
       <h2>Paris, Île-de-France</h2>
       <RentalTags />
-    </RentalInfoWrapper>
+    </RentalInfoContainer>
   )
 }
 export default RentalInfo

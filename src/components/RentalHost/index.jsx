@@ -3,16 +3,22 @@ import colors from '../../utils/style/colors'
 import Profile from '../../assets/profile-test.jpg'
 import RateStar from '../../assets/star_rate.svg'
 
-const RentalHostInfoWrapper = styled.div`
+const RentalHostInfoContainer = styled.div`
   margin: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media screen and (max-width: 992px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
 `
 const RetalHostInfo = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 
   h3 {
     display: inline-flex;
@@ -21,6 +27,7 @@ const RetalHostInfo = styled.div`
     font-weight: 500;
     font-size: 18px;
     padding: 0 1rem;
+    text-align: end;
   }
   img {
     width: 6.4rem;
@@ -39,7 +46,7 @@ const RetalHostInfo = styled.div`
   }
 `
 const ReantalStarWrapper = styled.div`
-  margin-top: 1rem;
+  margin-top: 2rem 0;
   img {
     width: 3.6rem;
     height: 3.6rem;
@@ -53,9 +60,12 @@ const ReantalStarWrapper = styled.div`
 `
 const RentalHost = () => {
   return (
-    <RentalHostInfoWrapper>
+    <RentalHostInfoContainer>
       <RetalHostInfo>
-        <h3>Alexande Dumas</h3>
+        <h3>
+          Alexande <br />
+          Dumas
+        </h3>
         <img src={Profile} alt="" />
       </RetalHostInfo>
       <ReantalStarWrapper>
@@ -75,7 +85,7 @@ const RentalHost = () => {
           <img src={RateStar} alt="" />
         </span>
       </ReantalStarWrapper>
-    </RentalHostInfoWrapper>
+    </RentalHostInfoContainer>
   )
 }
 export default RentalHost

@@ -1,6 +1,7 @@
 import React from 'react'
 import Carrousel from '../../components/Carrousel'
 import RentalInfo from '../../components/RentalInfo'
+import RentalHost from '../../components/RentalHost'
 
 const Rental = () => {
   return (
@@ -8,30 +9,7 @@ const Rental = () => {
       <Carrousel />
       <section>
         <RentalInfo />
-        <div>
-          <div>
-            <h4>Alexande</h4>
-            <h3>Dumas</h3>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <span>
-              <i></i>
-            </span>
-            <span>
-              <i></i>
-            </span>
-            <span>
-              <i></i>
-            </span>
-            <span>
-              <i></i>
-            </span>
-            <span>
-              <i></i>
-            </span>
-          </div>
-        </div>
+        <RentalHost />
       </section>
     </React.Fragment>
   )

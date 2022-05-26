@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import RentalTags from '../RentalTags'
 const RentalInfoWrapper = styled.div`
   margin: 2rem;
   h1,
@@ -28,11 +29,7 @@ const RentalInfo = () => {
     <RentalInfoWrapper>
       <h1>Cozy loft on the Canal Saint-Martin</h1>
       <h2>Paris, Île-de-France</h2>
-      <div>
-        <div>Cozy</div>
-        <div>Canal</div>
-        <div>Paris 10</div>
-      </div>
+      <RentalTags />
     </RentalInfoWrapper>
   )
 }

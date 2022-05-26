@@ -34,8 +34,8 @@ const RentalInfosWrapper = styled.section`
 const RentaDescriptionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 2rem;
   div {
-    width: 582px;
     margin-top: 0;
   }
 `
@@ -50,12 +50,14 @@ const Rental = () => {
       <RentaDescriptionWrapper>
         <div>
           <Accordion
+            size="small"
             title={labelContent[0].title}
             content={labelContent[0].content}
           />
         </div>
         <div>
           <Accordion
+            size="small"
             title={labelContent[0].title}
             content={labelContent[0].content}
           />

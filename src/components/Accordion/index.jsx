@@ -26,6 +26,9 @@ const AccordionContainer = styled.div`
       padding-bottom: 5rem;
     }
   }
+  &.small {
+    width: 582px;
+  }
 `
 
 const AccordionButton = styled.button`
@@ -63,11 +66,11 @@ const AccordionButton = styled.button`
   }
 `
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ size, title, content }) => {
   const [diplayed, handleAccordion] = useState(false)
 
   return (
-    <AccordionContainer>
+    <AccordionContainer className={size}>
       <AccordionButton onClick={() => handleAccordion(diplayed ? false : true)}>
         {title}
         <img

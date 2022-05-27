@@ -38,6 +38,10 @@ const RentaDescriptionWrapper = styled.div`
   div {
     margin-top: 0;
   }
+  @media screen and (max-width: 1224px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const Rental = () => {
   return (

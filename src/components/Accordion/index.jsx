@@ -26,6 +26,27 @@ const AccordionContainer = styled.div`
       padding-bottom: 5rem;
     }
   }
+  &.small {
+    width: 582px;
+    button {
+      font-size: 18px;
+    }
+    p {
+      padding: 1.9rem 1.8rem;
+      font-weight: 400;
+      font-size: 18px;
+      color: ${colors.primary};
+    }
+    @media screen and (max-width: 992px) {
+      width: 33.5rem;
+      button {
+        font-size: 13px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
 `
 
 const AccordionButton = styled.button`
@@ -63,11 +84,11 @@ const AccordionButton = styled.button`
   }
 `
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ size, title, content }) => {
   const [diplayed, handleAccordion] = useState(false)
 
   return (
-    <AccordionContainer>
+    <AccordionContainer className={size}>
       <AccordionButton onClick={() => handleAccordion(diplayed ? false : true)}>
         {title}
         <img

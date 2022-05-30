@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Carrousel from '../../components/Carrousel'
 import RentalInfo from '../../components/RentalInfo'
@@ -44,6 +45,25 @@ const RentaDescriptionWrapper = styled.div`
   }
 `
 const Rental = () => {
+  const { id } = useParams()
+  const [logementsData, setLogementsData] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/datas/logements.json`
+        )
+        const resultData = await response.json()
+        setLogementsData(resultData)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
+  const currentHostPage = logementsData.find((logement) => logement.id === id)
+  console.log(currentHostPage)
   return (
     <React.Fragment>
       <Carrousel />

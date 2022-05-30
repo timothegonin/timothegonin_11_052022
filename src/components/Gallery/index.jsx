@@ -59,7 +59,7 @@ const Gallery = () => {
     <GalleryWrapper>
       <StyledGallery>
         {logementsData.map((logement) => (
-          <Link to={`/rental`} key={logement.id}>
+          <Link to={`/rental/${logement.id}`} key={logement.id}>
             <CardRental title={logement.title} cover={logement.cover} />
           </Link>
         ))}

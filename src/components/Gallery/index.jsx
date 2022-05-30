@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import CardRental from '../CardRental'
@@ -32,15 +33,31 @@ const StyledGallery = styled.div`
 `
 
 const Gallery = () => {
+  const [logementsData, setLogementsData] = useState([])
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/datas/logements.json`
+        )
+        const resultData = await response.json()
+        setLogementsData(resultData)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
   return (
     <GalleryWrapper>
       <StyledGallery>
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
+        {logementsData.map((logement) => (
+          <CardRental
+            key={logement.id}
+            title={logement.title}
+            cover={logement.cover}
+          />
+        ))}
       </StyledGallery>
     </GalleryWrapper>
   )

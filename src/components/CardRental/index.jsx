@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import bgTest from '../../assets/bg-card-test.jpg'
 
 const CardRentalWrapper = styled.article`
   border-radius: 1rem;
@@ -42,11 +41,11 @@ const CardRentalTitle = styled.h3`
   font-weight: 500;
   font-size: 1.8rem;
 `
-const CardRental = () => {
+const CardRental = ({ title, cover }) => {
   return (
     <CardRentalWrapper>
-      <CardRentalImage src={bgTest} />
-      <CardRentalTitle>Card-Rental</CardRentalTitle>
+      <CardRentalImage src={cover} />
+      <CardRentalTitle>{title}</CardRentalTitle>
     </CardRentalWrapper>
   )
 }

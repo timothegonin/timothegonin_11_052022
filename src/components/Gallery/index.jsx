@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Loader from '../../utils/style/Loader'
@@ -58,11 +59,9 @@ const Gallery = () => {
     <GalleryWrapper>
       <StyledGallery>
         {logementsData.map((logement) => (
-          <CardRental
-            key={logement.id}
-            title={logement.title}
-            cover={logement.cover}
-          />
+          <Link to={`/rental`} key={logement.id}>
+            <CardRental title={logement.title} cover={logement.cover} />
+          </Link>
         ))}
       </StyledGallery>
     </GalleryWrapper>

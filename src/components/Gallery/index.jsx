@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import Loader from '../../utils/style/Loader'
 import CardRental from '../CardRental'
 
 const GalleryWrapper = styled.main`
@@ -34,21 +35,26 @@ const StyledGallery = styled.div`
 
 const Gallery = () => {
   const [logementsData, setLogementsData] = useState([])
+  const [isDataLoading, setDataLoading] = useState(false)
   useEffect(() => {
     async function fetchData() {
+      setDataLoading(true)
       try {
         const response = await fetch(
           `http://localhost:3000/datas/logements.json`
         )
         const resultData = await response.json()
         setLogementsData(resultData)
+        setDataLoading(false)
       } catch (err) {
         console.log(err)
       }
     }
     fetchData()
   }, [])
-  return (
+  return isDataLoading ? (
+    <Loader />
+  ) : (
     <GalleryWrapper>
       <StyledGallery>
         {logementsData.map((logement) => (

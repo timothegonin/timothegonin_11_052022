@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import arrow from '../../assets/arrow_back.svg'
-import bgTest from '../../assets/bg-card-test.jpg'
+// import bgTest from '../../assets/bg-card-test.jpg'
 
 const CarrouselWrapper = styled.aside`
   border-radius: 2.5rem;
@@ -8,6 +9,7 @@ const CarrouselWrapper = styled.aside`
   padding-left: 2rem;
   padding-right: 2rem;
   max-width: 124rem;
+  height: 41.5rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -67,13 +69,32 @@ const CarrouselIndex = styled.p`
     display: none;
   }
 `
-const Carrousel = () => {
+const Carrousel = ({ pictures }) => {
+  const [currentPicture, setCurrentPicture] = useState(0)
+  const handlePrevious = () => {
+    currentPicture === 0
+      ? setCurrentPicture(pictures.length - 1)
+      : setCurrentPicture(currentPicture - 1)
+  }
+  const handleNext = () => {
+    currentPicture === pictures.length - 1
+      ? setCurrentPicture(0)
+      : setCurrentPicture(currentPicture + 1)
+  }
   return (
     <CarrouselWrapper>
-      <CarrouselImage src={bgTest} alt="" />
-      <CarrouselButton className="button--previous"></CarrouselButton>
-      <CarrouselButton className="button--next"></CarrouselButton>
-      <CarrouselIndex>1/1</CarrouselIndex>
+      <CarrouselImage src={pictures[currentPicture]} alt="" />
+      <CarrouselButton
+        className="button--previous"
+        onClick={handlePrevious}
+      ></CarrouselButton>
+      <CarrouselButton
+        className="button--next"
+        onClick={handleNext}
+      ></CarrouselButton>
+      <CarrouselIndex>
+        {currentPicture + 1}/{pictures.length}
+      </CarrouselIndex>
     </CarrouselWrapper>
   )
 }

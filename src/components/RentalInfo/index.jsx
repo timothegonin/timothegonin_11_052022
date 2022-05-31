@@ -28,12 +28,12 @@ const RentalInfoContainer = styled.div`
     }
   }
 `
-const RentalInfo = ({ title, location }) => {
+const RentalInfo = ({ title, location, tags }) => {
   return (
     <RentalInfoContainer>
       <h1>{title}</h1>
       <h2>{location}</h2>
-      <RentalTags />
+      <RentalTags tags={tags} />
     </RentalInfoContainer>
   )
 }

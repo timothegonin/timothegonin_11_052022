@@ -76,6 +76,7 @@ const Rental = () => {
         <RentalInfo
           title={logementsData.title}
           location={logementsData.location}
+          tags={logementsData.tags}
         />
         <RentalHost
           name={logementsData.host.name}

@@ -36,24 +36,25 @@ const StyledGallery = styled.div`
 
 const Gallery = () => {
   const [logementsData, setLogementsData] = useState([])
-  const [isDataLoading, setDataLoading] = useState(false)
+  const [isDataLoaded, setIsDataLoaded] = useState(true)
+
   useEffect(() => {
     async function fetchData() {
-      setDataLoading(true)
       try {
         const response = await fetch(
           `http://localhost:3000/datas/logements.json`
         )
         const resultData = await response.json()
         setLogementsData(resultData)
-        setDataLoading(false)
+        setIsDataLoaded(false)
       } catch (err) {
         console.log(err)
       }
     }
     fetchData()
   }, [])
-  return isDataLoading ? (
+
+  return isDataLoaded ? (
     <Loader />
   ) : (
     <GalleryWrapper>

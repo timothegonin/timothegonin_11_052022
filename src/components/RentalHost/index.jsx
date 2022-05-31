@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import Profile from '../../assets/profile-test.jpg'
 import RateStar from '../../assets/star_rate.svg'
 
 const RentalHostInfoContainer = styled.div`
@@ -58,15 +57,12 @@ const ReantalStarWrapper = styled.div`
     }
   }
 `
-const RentalHost = () => {
+const RentalHost = ({ name, picture }) => {
   return (
     <RentalHostInfoContainer>
       <RetalHostInfo>
-        <h3>
-          Alexande <br />
-          Dumas
-        </h3>
-        <img src={Profile} alt="" />
+        <h3>{name}</h3>
+        <img src={picture} alt={`Portrait de ${name}`} />
       </RetalHostInfo>
       <ReantalStarWrapper>
         <span>

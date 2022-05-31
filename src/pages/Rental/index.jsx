@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Loader from '../../utils/style/Loader'
+
 import styled from 'styled-components'
 import Carrousel from '../../components/Carrousel'
 import RentalInfo from '../../components/RentalInfo'
@@ -47,6 +49,7 @@ const RentaDescriptionWrapper = styled.div`
 const Rental = () => {
   const { id } = useParams()
   const [logementsData, setLogementsData] = useState([])
+  const [isDataLoaded, setIsDataLoaded] = useState(true)
 
   useEffect(() => {
     async function fetchData() {
@@ -55,21 +58,29 @@ const Rental = () => {
           `http://localhost:3000/datas/logements.json`
         )
         const resultData = await response.json()
-        setLogementsData(resultData)
+        setLogementsData(resultData.find((logement) => logement.id === id))
+        setIsDataLoaded(false)
       } catch (err) {
         console.log(err)
       }
     }
     fetchData()
-  }, [])
-  const currentHostPage = logementsData.find((logement) => logement.id === id)
-  console.log(currentHostPage)
-  return (
+  }, [id])
+
+  return isDataLoaded ? (
+    <Loader />
+  ) : (
     <React.Fragment>
       <Carrousel />
       <RentalInfosWrapper>
-        <RentalInfo />
-        <RentalHost />
+        <RentalInfo
+          title={logementsData.title}
+          location={logementsData.location}
+        />
+        <RentalHost
+          name={logementsData.host.name}
+          picture={logementsData.host.picture}
+        />
       </RentalInfosWrapper>
       <RentaDescriptionWrapper>
         <div>

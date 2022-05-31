@@ -31,18 +31,24 @@ const AccordionContainer = styled.div`
     button {
       font-size: 18px;
     }
-    p {
+    p,
+    ul {
       padding: 1.9rem 1.8rem;
       font-weight: 400;
       font-size: 18px;
       color: ${colors.primary};
+    }
+    ul {
+      list-style-type: none;
+      align-self: flex-start;
     }
     @media screen and (max-width: 992px) {
       width: 33.5rem;
       button {
         font-size: 13px;
       }
-      p {
+      p,
+      ul {
         font-size: 13px;
       }
     }
@@ -97,7 +103,16 @@ const Accordion = ({ size, title, content }) => {
           className={diplayed ? 'open' : 'close'}
         />
       </AccordionButton>
-      {diplayed && <p>{content}</p>}
+      {diplayed &&
+        (Array.isArray(content) ? (
+          <ul>
+            {content.map((cont, index) => (
+              <li key={`${cont}-${index}`}>{cont}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{content}</p>
+        ))}
     </AccordionContainer>
   )
 }

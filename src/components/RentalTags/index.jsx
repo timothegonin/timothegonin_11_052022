@@ -12,8 +12,7 @@ const RentaTag = styled.span`
   align-items: center;
   border-radius: 1rem;
   background-color: ${colors.primary};
-  height: 2.5rem;
-  width: 11.5rem;
+  padding: 0.8rem 3rem;
   color: white;
   font-weight: 500;
   font-size: 14px;
@@ -21,17 +20,16 @@ const RentaTag = styled.span`
   margin-bottom: 0.5rem;
   @media screen and (max-width: 768px) {
     font-size: 10px;
-    width: 84px;
-    height: 18px;
+    padding: 0.4rem 1.5rem;
     border-radius: 0.5rem;
   }
 `
-const RentalTags = () => {
+const RentalTags = ({ tags }) => {
   return (
     <RentalTagsWrapper>
-      <RentaTag>Cozy</RentaTag>
-      <RentaTag>Canal</RentaTag>
-      <RentaTag>Paris 10</RentaTag>
+      {tags.map((tag, index) => (
+        <RentaTag key={`${index}-${tag}`}>{tag}</RentaTag>
+      ))}
     </RentalTagsWrapper>
   )
 }

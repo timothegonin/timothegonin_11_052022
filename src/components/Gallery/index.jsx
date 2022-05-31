@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import Loader from '../../utils/style/Loader'
 import CardRental from '../CardRental'
 
 const GalleryWrapper = styled.main`
@@ -32,15 +35,35 @@ const StyledGallery = styled.div`
 `
 
 const Gallery = () => {
-  return (
+  const [logementsData, setLogementsData] = useState([])
+  const [isDataLoaded, setIsDataLoaded] = useState(true)
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/datas/logements.json`
+        )
+        const resultData = await response.json()
+        setLogementsData(resultData)
+        setIsDataLoaded(false)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
+
+  return isDataLoaded ? (
+    <Loader />
+  ) : (
     <GalleryWrapper>
       <StyledGallery>
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
-        <CardRental />
+        {logementsData.map((logement) => (
+          <Link to={`/rental/${logement.id}`} key={logement.id}>
+            <CardRental title={logement.title} cover={logement.cover} />
+          </Link>
+        ))}
       </StyledGallery>
     </GalleryWrapper>
   )

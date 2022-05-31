@@ -51,7 +51,7 @@ const Rental = () => {
     <Loader />
   ) : (
     <React.Fragment>
-      <Carrousel />
+      <Carrousel pictures={logementsData.pictures} />
       <RentalInfosWrapper>
         <RentalInfo
           title={logementsData.title}

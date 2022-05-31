@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import RateStar from '../../assets/star_rate.svg'
+import RateStarRed from '../../assets/star_rate-red.svg'
 
 const RentalHostInfoContainer = styled.div`
   margin: 2rem;
@@ -57,7 +58,8 @@ const ReantalStarWrapper = styled.div`
     }
   }
 `
-const RentalHost = ({ name, picture }) => {
+const RentalHost = ({ name, picture, rating }) => {
+  const range = [1, 2, 3, 4, 5]
   return (
     <RentalHostInfoContainer>
       <RetalHostInfo>
@@ -65,21 +67,17 @@ const RentalHost = ({ name, picture }) => {
         <img src={picture} alt={`Portrait de ${name}`} />
       </RetalHostInfo>
       <ReantalStarWrapper>
-        <span>
-          <img src={RateStar} alt="" />
-        </span>
-        <span>
-          <img src={RateStar} alt="" />
-        </span>
-        <span>
-          <img src={RateStar} alt="" />
-        </span>
-        <span>
-          <img src={RateStar} alt="" />
-        </span>
-        <span>
-          <img src={RateStar} alt="" />
-        </span>
+        {range.map((rangeElement) =>
+          Number(rating) >= rangeElement ? (
+            <span key={rangeElement.toString()}>
+              <img src={RateStarRed} alt="Etoile rouge" />
+            </span>
+          ) : (
+            <span key={rangeElement.toString()}>
+              <img src={RateStar} alt="Etoile grise" />
+            </span>
+          )
+        )}
       </ReantalStarWrapper>
     </RentalHostInfoContainer>
   )

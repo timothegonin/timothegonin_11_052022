@@ -81,6 +81,7 @@ const Rental = () => {
         <RentalHost
           name={logementsData.host.name}
           picture={logementsData.host.picture}
+          rating={logementsData.rating}
         />
       </RentalInfosWrapper>
       <RentaDescriptionWrapper>

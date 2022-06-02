@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import arrow from '../../assets/arrow_back.svg'
 // import bgTest from '../../assets/bg-card-test.jpg'
@@ -84,14 +84,18 @@ const Carrousel = ({ pictures }) => {
   return (
     <CarrouselWrapper>
       <CarrouselImage src={pictures[currentPicture]} alt="" />
-      <CarrouselButton
-        className="button--previous"
-        onClick={handlePrevious}
-      ></CarrouselButton>
-      <CarrouselButton
-        className="button--next"
-        onClick={handleNext}
-      ></CarrouselButton>
+      {pictures.length > 1 && (
+        <React.Fragment>
+          <CarrouselButton
+            className="button--previous"
+            onClick={handlePrevious}
+          ></CarrouselButton>
+          <CarrouselButton
+            className="button--next"
+            onClick={handleNext}
+          ></CarrouselButton>
+        </React.Fragment>
+      )}
       <CarrouselIndex>
         {currentPicture + 1}/{pictures.length}
       </CarrouselIndex>

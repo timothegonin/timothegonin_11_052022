@@ -15,14 +15,12 @@ root.render(
     <React.StrictMode>
       <StyledGlobalStyle />
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="rental/:id" element={<Rental />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="rental/:id" element={<Rental />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
       <Footer />
     </React.StrictMode>
   </BrowserRouter>

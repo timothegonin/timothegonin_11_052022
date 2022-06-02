@@ -3,7 +3,7 @@ import colors from '../../utils/style/colors'
 import ErrorImg from '../../assets/404.svg'
 import styled from 'styled-components'
 
-const ErrorWrapper = styled.div`
+const ErrorWrapper = styled.main`
   text-align: center;
   padding: 0 2rem;
 `
@@ -36,7 +36,7 @@ const ErrorLink = styled(Link)`
   margin-top: 18.2rem;
   @media screen and (max-width: 768px) {
     font-size: 1.4rem;
-    margin-top: 13.3rem;
+    margin-top: 13.3rem 0;
     margin-bottom: 23.5rem;
   }
 `

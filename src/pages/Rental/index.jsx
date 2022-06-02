@@ -50,7 +50,7 @@ const Rental = () => {
   return isDataLoaded ? (
     <Loader />
   ) : (
-    <React.Fragment>
+    <main>
       <Carrousel pictures={logementsData.pictures} />
       <RentalInfosWrapper>
         <RentalInfo
@@ -80,7 +80,7 @@ const Rental = () => {
           />
         </div>
       </RentaDescriptionWrapper>
-    </React.Fragment>
+    </main>
   )
 }
 export default Rental

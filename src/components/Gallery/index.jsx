@@ -13,7 +13,6 @@ const GalleryWrapper = styled.main`
 `
 const StyledGallery = styled.div`
   background-color: ${colors.lightGray};
-  /* height: auto; */
   border-radius: 2.5rem;
 
   padding: 5.6rem 1rem;

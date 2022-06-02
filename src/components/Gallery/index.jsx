@@ -35,7 +35,7 @@ const StyledGallery = styled.div`
 
 const Gallery = () => {
   const [logementsData, setLogementsData] = useState([])
-  const [isDataLoaded, setIsDataLoaded] = useState(true)
+  const [isDataLoaded, setIsDataLoaded] = useState(false)
 
   useEffect(() => {
     async function fetchData() {

@@ -44,7 +44,7 @@ const CardRentalTitle = styled.h3`
 const CardRental = ({ title, cover }) => {
   return (
     <CardRentalWrapper>
-      <CardRentalImage src={cover} />
+      <CardRentalImage src={cover} alt={`Logement ${title}`} />
       <CardRentalTitle>{title}</CardRentalTitle>
     </CardRentalWrapper>
   )

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import Loader from '../../utils/style/Loader'
 
 import styled from 'styled-components'
@@ -28,9 +28,14 @@ const RentaDescriptionWrapper = styled.div`
   }
 `
 const Rental = () => {
-  const { id } = useParams()
   const [logementsData, setLogementsData] = useState([])
   const [isDataLoaded, setIsDataLoaded] = useState(true)
+  const [isValid, setIsValid] = useState(true)
+
+  const { id } = useParams()
+  const checkId = (data) => {
+    !data && setIsValid(false)
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -40,6 +45,7 @@ const Rental = () => {
         )
         const resultData = await response.json()
         setLogementsData(resultData.find((logement) => logement.id === id))
+        checkId(resultData.find((logement) => logement.id === id))
         setIsDataLoaded(false)
       } catch (err) {
         console.log(err)
@@ -47,9 +53,10 @@ const Rental = () => {
     }
     fetchData()
   }, [id])
+
   return isDataLoaded ? (
     <Loader />
-  ) : (
+  ) : isValid ? (
     <main>
       <Carrousel pictures={logementsData.pictures} />
       <RentalInfosWrapper>
@@ -81,6 +88,8 @@ const Rental = () => {
         </div>
       </RentaDescriptionWrapper>
     </main>
+  ) : (
+    <Navigate to="/error-40" />
   )
 }
 export default Rental

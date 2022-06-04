@@ -89,14 +89,20 @@ const Carrousel = ({ pictures }) => {
           <CarrouselButton
             className="button--previous"
             onClick={handlePrevious}
+            aria-label="Boutton image précédente"
           ></CarrouselButton>
           <CarrouselButton
             className="button--next"
             onClick={handleNext}
+            aria-label="Boutton image suivante"
           ></CarrouselButton>
         </React.Fragment>
       )}
-      <CarrouselIndex>
+      <CarrouselIndex
+        aria-label={`Image ${currentPicture + 1}, restantes ${
+          pictures.length - 1
+        }`}
+      >
         {currentPicture + 1}/{pictures.length}
       </CarrouselIndex>
     </CarrouselWrapper>

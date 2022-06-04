@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import HomeBackground from '../../assets/home-banner.jpg'
-import AboutBackground from '../../assets/about-banner.jpg'
+import HomeBackground from '../../assets/banner/home-banner.jpg'
+import AboutBackground from '../../assets/banner/about-banner.jpg'
 
 /* 
   ┌─────────────────────────────────────────────────────────────────────────┐

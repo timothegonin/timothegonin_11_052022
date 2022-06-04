@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import RateStar from '../../assets/star_rate.svg'
-import RateStarRed from '../../assets/star_rate-red.svg'
+import RateStar from '../../assets/icons/star_rate.svg'
+import RateStarRed from '../../assets/icons/star_rate-red.svg'
 
 /* 
   ┌─────────────────────────────────────────────────────────────────────────┐

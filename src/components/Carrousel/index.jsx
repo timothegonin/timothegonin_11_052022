@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import arrow from '../../assets/arrow_back.svg'
+import arrow from '../../assets/icons/arrow_back.svg'
 
 /* 
   ┌─────────────────────────────────────────────────────────────────────────┐

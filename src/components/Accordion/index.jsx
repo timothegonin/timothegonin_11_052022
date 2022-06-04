@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import AccordionIcon from '../../assets/arrow_back.svg'
+import AccordionIcon from '../../assets/icons/arrow_back.svg'
 
 /* 
   ┌─────────────────────────────────────────────────────────────────────────┐

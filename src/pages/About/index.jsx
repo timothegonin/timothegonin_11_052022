@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import Banner from '../../components/Banner'
 import Accordion from '../../components/Accordion'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const AccordionsWrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -10,6 +15,12 @@ const AccordionsWrapper = styled.main`
   margin: 1rem 0;
   padding: 0 2rem;
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ DATA                                                                    │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const AccordionsContent = [
   {
     title: 'Fiabilité',
@@ -33,6 +44,11 @@ const AccordionsContent = [
   },
 ]
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const About = () => {
   return (
     <React.Fragment>

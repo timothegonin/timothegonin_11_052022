@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import logo from '../../assets/logo-min.svg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const StyledFooterWrapper = styled.footer`
   background-color: black;
   height: 20.9rem;
@@ -31,6 +36,11 @@ const StyledFooterContent = styled.div`
   }
 `
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Footer = () => {
   return (
     <StyledFooterWrapper>

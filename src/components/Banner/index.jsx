@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import HomeBackground from '../../assets/home-banner.jpg'
 import AboutBackground from '../../assets/about-banner.jpg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const BannerWrapper = styled.aside`
   max-width: 124rem;
   width: 100%;
@@ -51,6 +56,11 @@ const BannerBackground = styled.div`
   }
 `
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Banner = () => {
   let location = useLocation().pathname
   let bannerType

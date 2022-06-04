@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import RentalTags from '../RentalTags'
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalInfoContainer = styled.div`
   margin: 2rem;
   h1,
@@ -28,6 +34,12 @@ const RentalInfoContainer = styled.div`
     }
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalInfo = ({ title, location, tags }) => {
   return (
     <RentalInfoContainer>

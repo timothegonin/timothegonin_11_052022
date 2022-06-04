@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const CardRentalWrapper = styled.article`
   border-radius: 1rem;
   overflow: hidden;
@@ -41,6 +46,12 @@ const CardRentalTitle = styled.h3`
   font-weight: 500;
   font-size: 1.8rem;
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const CardRental = ({ title, cover }) => {
   return (
     <CardRentalWrapper>

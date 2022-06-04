@@ -3,6 +3,11 @@ import colors from '../../utils/style/colors'
 import ErrorImg from '../../assets/404.svg'
 import styled from 'styled-components'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const ErrorWrapper = styled.main`
   text-align: center;
   padding: 0 2rem;
@@ -40,7 +45,11 @@ const ErrorLink = styled(Link)`
     margin-bottom: 23.5rem;
   }
 `
-
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Error = () => {
   return (
     <ErrorWrapper>

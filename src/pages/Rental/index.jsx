@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import Loader from '../../utils/style/Loader'
-
 import styled from 'styled-components'
 import Carrousel from '../../components/Carrousel'
 import RentalInfo from '../../components/RentalInfo'
 import RentalHost from '../../components/RentalHost'
 import Accordion from '../../components/Accordion'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalInfosWrapper = styled.section`
   display: flex;
   justify-content: space-between;
@@ -27,6 +31,12 @@ const RentaDescriptionWrapper = styled.div`
     align-items: center;
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Rental = () => {
   const [logementsData, setLogementsData] = useState([])
   const [isDataLoaded, setIsDataLoaded] = useState(true)

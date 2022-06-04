@@ -29,6 +29,9 @@ const StyledGlobalStyle = createGlobalStyle`
         max-width: 124rem;
         width: 100%;
       }
+      main{
+        flex-grow: 1;
+      }
       footer {
         max-width: inherit;
       }

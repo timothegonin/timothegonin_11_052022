@@ -89,7 +89,7 @@ const Rental = () => {
       </RentaDescriptionWrapper>
     </main>
   ) : (
-    <Navigate to="/error-40" />
+    <Navigate to="/error-404" />
   )
 }
 export default Rental

@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import RateStar from '../../assets/star_rate.svg'
-import RateStarRed from '../../assets/star_rate-red.svg'
+import RateStar from '../../assets/icons/star_rate.svg'
+import RateStarRed from '../../assets/icons/star_rate-red.svg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalHostInfoContainer = styled.div`
   margin: 2rem;
   display: flex;
@@ -18,7 +23,6 @@ const RentalHostInfoContainer = styled.div`
 const RetalHostInfo = styled.div`
   display: flex;
   align-items: center;
-  /* margin-bottom: 2rem; */
 
   h3 {
     display: inline-flex;
@@ -58,8 +62,15 @@ const ReantalStarWrapper = styled.div`
     }
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalHost = ({ name, picture, rating }) => {
   const range = [1, 2, 3, 4, 5]
+
   return (
     <RentalHostInfoContainer>
       <RetalHostInfo>

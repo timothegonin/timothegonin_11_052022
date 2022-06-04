@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import Loader from '../../utils/style/Loader'
-
 import styled from 'styled-components'
 import Carrousel from '../../components/Carrousel'
 import RentalInfo from '../../components/RentalInfo'
 import RentalHost from '../../components/RentalHost'
 import Accordion from '../../components/Accordion'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalInfosWrapper = styled.section`
   display: flex;
   justify-content: space-between;
@@ -27,10 +31,21 @@ const RentaDescriptionWrapper = styled.div`
     align-items: center;
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Rental = () => {
-  const { id } = useParams()
   const [logementsData, setLogementsData] = useState([])
   const [isDataLoaded, setIsDataLoaded] = useState(true)
+  const [isValid, setIsValid] = useState(true)
+
+  const { id } = useParams()
+  const checkId = (data) => {
+    !data && setIsValid(false)
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -40,6 +55,7 @@ const Rental = () => {
         )
         const resultData = await response.json()
         setLogementsData(resultData.find((logement) => logement.id === id))
+        checkId(resultData.find((logement) => logement.id === id))
         setIsDataLoaded(false)
       } catch (err) {
         console.log(err)
@@ -47,10 +63,11 @@ const Rental = () => {
     }
     fetchData()
   }, [id])
+
   return isDataLoaded ? (
     <Loader />
-  ) : (
-    <React.Fragment>
+  ) : isValid ? (
+    <main>
       <Carrousel pictures={logementsData.pictures} />
       <RentalInfosWrapper>
         <RentalInfo
@@ -80,7 +97,9 @@ const Rental = () => {
           />
         </div>
       </RentaDescriptionWrapper>
-    </React.Fragment>
+    </main>
+  ) : (
+    <Navigate to="/error-404" />
   )
 }
 export default Rental

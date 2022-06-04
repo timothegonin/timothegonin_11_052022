@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import arrow from '../../assets/arrow_back.svg'
-// import bgTest from '../../assets/bg-card-test.jpg'
+import arrow from '../../assets/icons/arrow_back.svg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const CarrouselWrapper = styled.aside`
   border-radius: 2.5rem;
   margin: 2rem auto;
@@ -69,8 +73,15 @@ const CarrouselIndex = styled.p`
     display: none;
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Carrousel = ({ pictures }) => {
   const [currentPicture, setCurrentPicture] = useState(0)
+
   const handlePrevious = () => {
     currentPicture === 0
       ? setCurrentPicture(pictures.length - 1)
@@ -81,6 +92,7 @@ const Carrousel = ({ pictures }) => {
       ? setCurrentPicture(0)
       : setCurrentPicture(currentPicture + 1)
   }
+
   return (
     <CarrouselWrapper>
       <CarrouselImage src={pictures[currentPicture]} alt="" />
@@ -89,14 +101,20 @@ const Carrousel = ({ pictures }) => {
           <CarrouselButton
             className="button--previous"
             onClick={handlePrevious}
+            aria-label="Boutton image précédente"
           ></CarrouselButton>
           <CarrouselButton
             className="button--next"
             onClick={handleNext}
+            aria-label="Boutton image suivante"
           ></CarrouselButton>
         </React.Fragment>
       )}
-      <CarrouselIndex>
+      <CarrouselIndex
+        aria-label={`Image ${currentPicture + 1}, restantes ${
+          pictures.length - 1
+        }`}
+      >
         {currentPicture + 1}/{pictures.length}
       </CarrouselIndex>
     </CarrouselWrapper>

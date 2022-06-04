@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import AccordionIcon from '../../assets/arrow_back.svg'
+import AccordionIcon from '../../assets/icons/arrow_back.svg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const AccordionContainer = styled.div`
   margin: 3.1rem 0;
   width: 100%;
@@ -90,6 +95,11 @@ const AccordionButton = styled.button`
   }
 `
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Accordion = ({ size, title, content }) => {
   const [diplayed, handleAccordion] = useState(false)
 

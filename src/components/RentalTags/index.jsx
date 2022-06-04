@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalTagsWrapper = styled.div`
   margin: 2rem 0;
   @media screen and (max-width: 768px) {
@@ -24,6 +30,12 @@ const RentaTag = styled.span`
     border-radius: 0.5rem;
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const RentalTags = ({ tags }) => {
   return (
     <RentalTagsWrapper>

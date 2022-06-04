@@ -5,6 +5,11 @@ import colors from '../../utils/style/colors'
 import Loader from '../../utils/style/Loader'
 import CardRental from '../CardRental'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const GalleryWrapper = styled.main`
   margin-top: 4.3rem;
   padding-right: 2rem;
@@ -13,7 +18,6 @@ const GalleryWrapper = styled.main`
 `
 const StyledGallery = styled.div`
   background-color: ${colors.lightGray};
-  /* height: auto; */
   border-radius: 2.5rem;
 
   padding: 5.6rem 1rem;
@@ -34,9 +38,14 @@ const StyledGallery = styled.div`
   }
 `
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Gallery = () => {
   const [logementsData, setLogementsData] = useState([])
-  const [isDataLoaded, setIsDataLoaded] = useState(true)
+  const [isDataLoaded, setIsDataLoaded] = useState(false)
 
   useEffect(() => {
     async function fetchData() {

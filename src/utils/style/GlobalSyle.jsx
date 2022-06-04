@@ -22,14 +22,15 @@ const StyledGlobalStyle = createGlobalStyle`
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       width: 100%;
       min-height:100vh;
-      main{
-        flex-grow: 1;
-      }
       & > * {
         max-width: 124rem;
         width: 100%;
+      }
+      main{
+        flex-grow: 1;
       }
       footer {
         max-width: inherit;

@@ -1,8 +1,13 @@
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import HomeBackground from '../../assets/home-banner.jpg'
-import AboutBackground from '../../assets/about-banner.jpg'
+import HomeBackground from '../../assets/banner/home-banner.jpg'
+import AboutBackground from '../../assets/banner/about-banner.jpg'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const BannerWrapper = styled.aside`
   max-width: 124rem;
   width: 100%;
@@ -51,6 +56,11 @@ const BannerBackground = styled.div`
   }
 `
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Banner = () => {
   let location = useLocation().pathname
   let bannerType

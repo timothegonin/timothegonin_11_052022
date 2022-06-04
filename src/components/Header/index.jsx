@@ -2,6 +2,11 @@ import styled from 'styled-components'
 import Logo from '../../assets/logo.svg'
 import Nav from '../Nav'
 
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ STYLES                                                                  │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const SyledLogo = styled.img`
   height: 6.8rem;
   width: 21rem;
@@ -22,6 +27,12 @@ const StyledHeader = styled.header`
     margin-top: 2rem;
   }
 `
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ COMPONENT                                                               │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
 const Header = () => {
   return (
     <StyledHeader>

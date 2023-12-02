@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/timothe_gonin_11_052022.git/static/js/main.18f05af3.js",
+    "static/media/home-banner.jpg": "/timothe_gonin_11_052022.git/static/media/home-banner.43b74b63e75711bff3d6.jpg",
+    "static/media/about-banner.jpg": "/timothe_gonin_11_052022.git/static/media/about-banner.9808a96bb8dfb9112085.jpg",
+    "static/media/logo.svg": "/timothe_gonin_11_052022.git/static/media/logo.ac38b36ec692f2f5731bc84c1ac2030e.svg",
+    "static/media/logo-min.svg": "/timothe_gonin_11_052022.git/static/media/logo-min.a8b0425983c013ffdc2d9304587b5c23.svg",
+    "index.html": "/timothe_gonin_11_052022.git/index.html",
+    "static/media/404.svg": "/timothe_gonin_11_052022.git/static/media/404.18486faf524a383724923be78ca13cf1.svg",
+    "static/media/arrow_back.svg": "/timothe_gonin_11_052022.git/static/media/arrow_back.699fbe3502c281288d50b17a8520980d.svg",
+    "static/media/star_rate-red.svg": "/timothe_gonin_11_052022.git/static/media/star_rate-red.9b03bd042fdc5c38d16f8b06025d416c.svg",
+    "static/media/star_rate.svg": "/timothe_gonin_11_052022.git/static/media/star_rate.5ff2493a0a3e5d95fa8aa39332ca25b2.svg",
+    "main.18f05af3.js.map": "/timothe_gonin_11_052022.git/static/js/main.18f05af3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.18f05af3.js"
+  ]
+}

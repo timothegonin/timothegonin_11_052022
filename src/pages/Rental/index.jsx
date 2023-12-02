@@ -41,31 +41,12 @@ const RentaDescriptionWrapper = styled.div`
 const Rental = () => {
   const { rentals } = useContext(RentalsContext)
   const [rentalsData, setRentalsData] = useState([])
-  // const [isDataLoaded, setIsDataLoaded] = useState(true)
   const [isValid, setIsValid] = useState(true)
-  console.log(rentals, 'context_RENTLALS')
 
   const { id } = useParams()
   const checkId = (data) => {
     !data && setIsValid(false)
   }
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetch(
-  //         `http://localhost:3000/datas/logements.json`
-  //       )
-  //       const resultData = await response.json()
-  //       setLogementsData(resultData.find((logement) => logement.id === id))
-  //       checkId(resultData.find((logement) => logement.id === id))
-  //       setIsDataLoaded(false)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   fetchData()
-  // }, [id])
 
   useEffect(() => {
     setRentalsData(rentals.find((rental) => rental.id === id))

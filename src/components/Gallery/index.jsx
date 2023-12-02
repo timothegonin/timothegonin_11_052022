@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { RentalsContext } from '../../utils/context'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
@@ -44,33 +45,21 @@ const StyledGallery = styled.div`
   └─────────────────────────────────────────────────────────────────────────┘
  */
 const Gallery = () => {
-  const [logementsData, setLogementsData] = useState([])
-  const [isDataLoaded, setIsDataLoaded] = useState(false)
+  const { rentals } = useContext(RentalsContext)
+  const [rentalsData, setRentalsData] = useState([])
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          `http://localhost:3000/datas/logements.json`
-        )
-        const resultData = await response.json()
-        setLogementsData(resultData)
-        setIsDataLoaded(false)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    fetchData()
-  }, [])
+    setRentalsData(rentals)
+  }, [rentals])
 
-  return isDataLoaded ? (
+  return rentalsData.lenght === 0 ? (
     <Loader />
   ) : (
     <GalleryWrapper>
       <StyledGallery>
-        {logementsData.map((logement) => (
-          <Link to={`/rental/${logement.id}`} key={logement.id}>
-            <CardRental title={logement.title} cover={logement.cover} />
+        {rentalsData.map((rental) => (
+          <Link to={`/rental/${rental.id}`} key={rental.id}>
+            <CardRental title={rental.title} cover={rental.cover} />
           </Link>
         ))}
       </StyledGallery>

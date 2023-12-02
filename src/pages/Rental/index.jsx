@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { RentalsContext } from '../../utils/context'
 import { Navigate, useParams } from 'react-router-dom'
 import Loader from '../../utils/style/Loader'
 import styled from 'styled-components'
@@ -38,8 +39,8 @@ const RentaDescriptionWrapper = styled.div`
   └─────────────────────────────────────────────────────────────────────────┘
  */
 const Rental = () => {
-  const [logementsData, setLogementsData] = useState([])
-  const [isDataLoaded, setIsDataLoaded] = useState(true)
+  const { rentals } = useContext(RentalsContext)
+  const [rentalsData, setRentalsData] = useState([])
   const [isValid, setIsValid] = useState(true)
 
   const { id } = useParams()
@@ -48,37 +49,25 @@ const Rental = () => {
   }
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          `http://localhost:3000/datas/logements.json`
-        )
-        const resultData = await response.json()
-        setLogementsData(resultData.find((logement) => logement.id === id))
-        checkId(resultData.find((logement) => logement.id === id))
-        setIsDataLoaded(false)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    fetchData()
-  }, [id])
+    setRentalsData(rentals.find((rental) => rental.id === id))
+    checkId(rentals.find((rental) => rental.id === id))
+  }, [rentals, id])
 
-  return isDataLoaded ? (
+  return rentalsData.length === 0 ? (
     <Loader />
   ) : isValid ? (
     <main>
-      <Carrousel pictures={logementsData.pictures} />
+      <Carrousel pictures={rentalsData.pictures} />
       <RentalInfosWrapper>
         <RentalInfo
-          title={logementsData.title}
-          location={logementsData.location}
-          tags={logementsData.tags}
+          title={rentalsData.title}
+          location={rentalsData.location}
+          tags={rentalsData.tags}
         />
         <RentalHost
-          name={logementsData.host.name}
-          picture={logementsData.host.picture}
-          rating={logementsData.rating}
+          name={rentalsData.host.name}
+          picture={rentalsData.host.picture}
+          rating={rentalsData.rating}
         />
       </RentalInfosWrapper>
       <RentaDescriptionWrapper>
@@ -86,14 +75,14 @@ const Rental = () => {
           <Accordion
             size="small"
             title="Description"
-            content={logementsData.description}
+            content={rentalsData.description}
           />
         </div>
         <div>
           <Accordion
             size="small"
             title="Équipements"
-            content={logementsData.equipments}
+            content={rentalsData.equipments}
           />
         </div>
       </RentaDescriptionWrapper>

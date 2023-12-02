@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { RentalsContext } from '../../utils/context'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
@@ -44,8 +45,10 @@ const StyledGallery = styled.div`
   └─────────────────────────────────────────────────────────────────────────┘
  */
 const Gallery = () => {
+  const { rentals } = useContext(RentalsContext)
   const [logementsData, setLogementsData] = useState([])
   const [isDataLoaded, setIsDataLoaded] = useState(false)
+  console.log(rentals, 'context_GALLERY')
 
   useEffect(() => {
     async function fetchData() {

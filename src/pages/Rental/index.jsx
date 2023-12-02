@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { RentalsContext } from '../../utils/context'
 import { Navigate, useParams } from 'react-router-dom'
 import Loader from '../../utils/style/Loader'
 import styled from 'styled-components'
@@ -38,9 +39,11 @@ const RentaDescriptionWrapper = styled.div`
   └─────────────────────────────────────────────────────────────────────────┘
  */
 const Rental = () => {
+  const { rentals } = useContext(RentalsContext)
   const [logementsData, setLogementsData] = useState([])
   const [isDataLoaded, setIsDataLoaded] = useState(true)
   const [isValid, setIsValid] = useState(true)
+  console.log(rentals, 'context_RENTLALS')
 
   const { id } = useParams()
   const checkId = (data) => {
